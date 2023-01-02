@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <h1>React.js</h1>
+
+
+
+    <div id="root"></div>
+
+    <div id="para"></div>
+
+    <div id="img"></div>
+
+    <div id="selector"multiple></div>
+
+    <script type="text/babel">
+        function Hello() {
+            return <h1> Hello React </h1>
+        }
+        ReactDOM.render(<Hello/>, document.getElementById("root"))
+
+        function CreateText(){
+            return <p>Lorem ipsum dolor sit amet.</p>
+        }
+        ReactDOM.render(<CreateText />, document.getElementById("para"))
+
+        function AddImg(){
+            return <img src="https://media.npr.org/assets/img/2022/08/21/moon1_sq-3e2ed2ced72ec3254ca022691e4d7ed0ac9f3a14-s1200-c85.webp" alt="moon"></img>
+        }
+        ReactDOM.render(<AddImg/>, document.querySelector("#img"))
+
+        function Selector(){
+            return <select><option> Moon</option>, <option>Earth</option>,<option> Sun</option>, <option>Mars</option></select>
+        }
+        ReactDOM.render(<Selector />, document.getElementById("selector"))
+    </script>
+
+
+
+
+    <script crossorigin="" src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
