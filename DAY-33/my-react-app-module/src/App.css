@@ -22,7 +22,7 @@ hr{
   width: 500px;
   margin: 30px 0px;
 }
-#container{
+.container{
   display: flex;
   text-align: start;
   margin-bottom: 20px;
