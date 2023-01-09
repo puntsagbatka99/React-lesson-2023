@@ -11,7 +11,6 @@ import products from "./seed";
 
 function App() {
   const productList = products.map((product) =>{
-    console.log(product);
     return <ProductFunc 
           title= {product.title}
           id={product.id}
@@ -27,14 +26,6 @@ function App() {
       <header className="App-header">
         <h1>Popular Product</h1>
         <hr/>
-        {/* <Product/>
-        <Product2/>
-        <Product3/>
-        <Product4/>
-        <ProductFunc/>
-        <ProductFunc2/>
-        <ProductFunc3/>
-        <ProductFunc4/> */}
         {productList}
 
       </header>
