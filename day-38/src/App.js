@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import Button from './Components/Button';
+import AlertButton from "./Components/AlertFunc"
+import ToolBar from './Components/ToolBar';
+import ToolBarNew from './Components/ToolBarNew';
+import ParentToolBar from './Components/ParentToolBar';
+import SignUp from './Components/SignUp';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>DAY-38 REACT EVENTS</h1>
+      <Button/>
+      <AlertButton/>
+      <ToolBar/>
+      <ToolBarNew/>
+      <ParentToolBar/>
+      <SignUp/>
     </div>
   );
 }
