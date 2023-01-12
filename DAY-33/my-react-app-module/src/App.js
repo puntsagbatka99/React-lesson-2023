@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   
-    const [productsList, setProductsList] = useState(products)
+  const [productsList, setProductsList] = useState(products)
 
   function handleProductUpVote(productId){
     console.log("upVoted", productId)
