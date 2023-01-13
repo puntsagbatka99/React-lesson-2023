@@ -5,6 +5,7 @@ import Counter from './components/Counter';
 import UpdateArrays from './components/UpdateArrays';
 import List from './components/SpreadArray';
 import UpdatingObjects from './components/UpdatingObjects';
+import ExerciseFunction from './components/Exercise';
 
 function App() {
   const[counter, SetCounter] = useState(0)
@@ -19,7 +20,7 @@ function App() {
   }
   return (
     <div className="App">
-      <div>
+      {/* <div>
         <p>{counter}</p>
         <button onClick={() => handleClick()}>click</button>
       </div>
@@ -30,7 +31,8 @@ function App() {
       <UpdatingObjects/>
       <List/>
       <Counter/>
-      <UpdateArrays/>
+      <UpdateArrays/> */}
+      <ExerciseFunction/>
     </div>
 
   );
