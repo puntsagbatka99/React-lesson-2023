@@ -15,11 +15,11 @@ function App() {
     <div>
       <h1>DaY-43 React Route</h1>
       <div id="navbar">
-        <Link href="/">Home</Link>
-        <Link href="/about">About</Link>
-        <Link href="/log-in">Login</Link>
-        <Link href="/register">Register</Link>
-        <Link href="/feedback">Feedback</Link>
+        <Link to={"/"}>Home</Link>
+        <Link to={"/about"}>About</Link>
+        <Link to={"/log-in"}>Login</Link>
+        <Link to={"/register"}>Register</Link>
+        <Link to={"/feedback"}>Feedback</Link>
       </div>
       <Routes>
           <Route path="/" element={<Home/>}/>
