@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Link } from "react-router-dom"
 import './App.css';
 import About from "./components/About";
 import Khangai from "./components/about/khangai";
@@ -15,11 +15,11 @@ function App() {
     <div>
       <h1>DaY-43 React Route</h1>
       <div id="navbar">
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/log-in">Login</a>
-        <a href="/register">Register</a>
-        <a href="/feedback">Feedback</a>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+        <Link href="/log-in">Login</Link>
+        <Link href="/register">Register</Link>
+        <Link href="/feedback">Feedback</Link>
       </div>
       <Routes>
           <Route path="/" element={<Home/>}/>
