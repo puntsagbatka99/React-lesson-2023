@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+h1{
+  text-align: center;
+  background-color: antiquewhite;
+}
+
+#navbar{
+  display: flex;
+  justify-content: space-around;
+}
+#navbar a{
+  text-decoration: none;
+  color: black;
+  background-color: antiquewhite;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
