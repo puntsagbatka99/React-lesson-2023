@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Panel from "./Panel";
 
 export default function Accordion() {
@@ -10,6 +11,7 @@ export default function Accordion() {
             <Panel title="Этимологи">
             Улаанбаатар (ᠤᠯᠠᠭᠠᠨᠪᠠᠭᠠᠲᠤᠷ улаганбагатур, улаан-баа-тар) нь Монгол Улсын нийслэл бөгөөд Монгол улсын цорын ганц саятан хот юм. 1992 оны шинэ нутаг дэвсгэрийн хуваариар үндсэн 6, дагуул 3, нийт 9 дүүрэгтэй, нутаг дэвсгэрийн хэмжээ 4,704.4 км2 газартай. 2021 оны эцсээр 1,649,172 хүн оршин сууж байна.
             </Panel>
+            <Link to={"/"}><button>Back</button></Link>
         </div>
     )
 }
