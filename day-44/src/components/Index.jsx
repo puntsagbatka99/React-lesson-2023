@@ -20,6 +20,8 @@ export default function Index() {
                 <Link to={"/about"} state={aboutPagedata}>About Page</Link>
                 <Link to={"/accordion"}>Accordion</Link>
                 <Link to={"/movies"}>Movies Page</Link>
+                <Link to={"/gallery"}>Gallery Page</Link>
+                <Link to={"/toast"}>Toaster Page</Link>
             </div>
         </div>
     )

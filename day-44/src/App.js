@@ -7,6 +7,8 @@ import AboutPage from './components/AboutPage';
 import HomePage from './components/HomePage';
 import Movies from './components/Movies';
 import Movie from './components/Movie';
+import Gallery from './components/ImageGallery';
+import ToasterPage from './components/ToasterPage';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/panel" element={<Panel/>}/>
         <Route path="/movies" element={<Movies/>}/>
         <Route path="/movie/:id" element={<Movie/>}/>
+        <Route path="/gallery" element={<Gallery/>}/>
+        <Route path="/toast" element={<ToasterPage/>}/>
       </Routes>
     </div>
   );
