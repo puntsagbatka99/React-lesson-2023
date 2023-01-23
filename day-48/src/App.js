@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Anime from './components/Anime';
 import Button from './components/Button';
 import TopAnime from './components/TopAnime';
+import Exercises from './Exercise/Exercises';
 
 function App() {
   const [text, setText] = useState("")
@@ -14,7 +15,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Input
+      {/* <Input
         label="first label"
         value={text}
         onChange={handleChange} />
@@ -24,7 +25,8 @@ function App() {
         onChange={handleChange} />
         <Anime/>
         <Button/>
-        <TopAnime/>
+        <TopAnime/> */}
+        <Exercises/>
     </div>
   );
 }
