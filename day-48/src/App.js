@@ -2,6 +2,9 @@
 import './App.css';
 import Input from './components/Input';
 import { useState } from 'react';
+import Anime from './components/Anime';
+import Button from './components/Button';
+import TopAnime from './components/TopAnime';
 
 function App() {
   const [text, setText] = useState("")
@@ -19,6 +22,9 @@ function App() {
         label="second label"
         value={text}
         onChange={handleChange} />
+        <Anime/>
+        <Button/>
+        <TopAnime/>
     </div>
   );
 }
