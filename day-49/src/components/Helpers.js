@@ -1,3 +1,5 @@
+import {v4 as uuidv4} from "uuid"
+
 function renderElapsedString(elapsed, runningSince){
     let totalElapsed = elapsed;
     if( runningSince){
@@ -24,4 +26,13 @@ function pad(numberString, size){
     return padded
 }
 
-export {renderElapsedString}
+function newTimer(attrs = {}){
+    return{
+        title: attrs.title || "Timer",
+        project: attrs.project || "Project",
+        id: uuidv4(),
+        elapsed: 0,
+    }
+}
+
+export {renderElapsedString, newTimer}
