@@ -11,3 +11,4 @@ export default function ProductList(props) {
 
   return <div className="ui unstackable items">{productComponents}</div>;
 }
+console.log( ProductList);
