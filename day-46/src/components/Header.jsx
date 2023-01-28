@@ -1,4 +1,5 @@
 export default function Header(props) {
+    console.log(props)
     return (
         <div>
             <div className="ui menu">
