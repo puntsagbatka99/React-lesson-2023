@@ -3,7 +3,7 @@ export default function Header (){
     return (
         <div  style={{display:"flex", alignItems:"center", justifyContent:"space-between", backgroundColor:"#746ab0"}}>
             <div style={{display:"flex", alignItems:"center"}}>
-                <a href="" style={{textDecoration:"none", color:"white", display:"flex", alignItems:"center"}}><ArrowBackIcon/></a>
+                <a href="/" style={{textDecoration:"none", color:"white", display:"flex", alignItems:"center"}}><ArrowBackIcon/></a>
                 <h3>React Material Admin Full</h3>
             </div>
             <div style={{display:"flex", alignItems:"center"}}>

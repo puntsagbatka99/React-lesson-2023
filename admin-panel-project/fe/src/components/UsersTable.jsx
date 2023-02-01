@@ -1,23 +1,22 @@
 import { DataGrid } from '@mui/x-data-grid';
 const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
+    { field: 'firstName', headerName: 'First name', width: 190 },
+    { field: 'lastName', headerName: 'Last name', width: 190 },
     {
-        field: 'age',
-        headerName: 'Age',
+        field: 'phoneNumber',
+        headerName: 'Phone Number',
         type: 'number',
-        width: 90,
+        width: 130,
     },
     {
-        field: 'fullName',
-        headerName: 'Full name',
-        description: 'This column has a value getter and is not sortable.',
-        sortable: false,
-        width: 160,
-        valueGetter: (params) =>
-            `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+        field: 'email',
+        headerName: 'E-mail',
+        width: 200,
     },
+    { field: 'role', headerName: 'Role', width: 70 },
+    { field: 'disabled', headerName: 'Disabled', width: 90 },
+    { field: 'avatar', headerName: 'Avatar', width: 90 },
+    { field: 'actions', headerName: 'Actions', width: 90 },
 ];
 
 const rows = [
