@@ -1,5 +1,5 @@
 export default function InputForm({setData}){
-const POST_DATA_URL = "http://localhost:8080/data"
+const POST_DATA_URL = "http://localhost:8001/data"
 
     async function postData(data){
         console.log(data)

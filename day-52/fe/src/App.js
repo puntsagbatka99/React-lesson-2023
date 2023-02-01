@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
 
-  const URL = "http://localhost:8080/users"
+  const URL = "http://localhost:8000/users"
   const newUser = {
     id: "",
     username: "",

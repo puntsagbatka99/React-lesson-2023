@@ -6,7 +6,7 @@ const { type } = require("os");
 const app = express()
 
 
-const PORT = 8080;
+const PORT = 8000;
 
 app.use(cors());
 app.use(express.json())
