@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import './App.css';
-import {   fetchAllData, deleteUser, createUser,updateUser   } from "./services/usersServices";
-// import { fetchAllData, deleteUser, createUser,updateUser } from "./services/axiosUsersServices";
+// import {   fetchAllData, deleteUser, createUser,updateUser   } from "./services/usersServices";
+import { fetchAllData, deleteUser, createUser,updateUser } from "./services/axiosUsersServices";
 function App() {
 
   const URL = "http://localhost:8000/users"
