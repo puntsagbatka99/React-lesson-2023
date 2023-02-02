@@ -3,8 +3,8 @@ import './App.css';
 import InputForm from "./component/InputForm";
 import UpdateForm from "./component/UpdateForm";
 
-const GET_DATA_URL = "http://localhost:8080/data"
-const DELETE_DATA_URL = "http://localhost:8080/data"
+const GET_DATA_URL = "http://localhost:8001/data"
+const DELETE_DATA_URL = "http://localhost:8001/data"
 
 function App() {
   const [data, setData] = useState([]);

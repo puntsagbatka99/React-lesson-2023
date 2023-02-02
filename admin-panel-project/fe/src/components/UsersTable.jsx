@@ -1,46 +1,64 @@
 import { DataGrid } from '@mui/x-data-grid';
-const columns = [
-    { field: 'firstName', headerName: 'First name', width: 190 },
-    { field: 'lastName', headerName: 'Last name', width: 190 },
-    {
-        field: 'phoneNumber',
-        headerName: 'Phone Number',
-        type: 'number',
-        width: 130,
-    },
-    {
-        field: 'email',
-        headerName: 'E-mail',
-        width: 200,
-    },
-    { field: 'role', headerName: 'Role', width: 70 },
-    { field: 'disabled', headerName: 'Disabled', width: 90 },
-    { field: 'avatar', headerName: 'Avatar', width: 90 },
-    { field: 'actions', headerName: 'Actions', width: 90 },
-];
+import { useState } from 'react';
 
-const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 35 },
-    { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-    { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-    { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-    { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-    { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-    { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-    { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-    { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
-];
 
 export default function UsersTable() {
-    return (
-        <div style={{ height: 400, width: '100%' }}>
-            <DataGrid
-                rows={rows}
-                columns={columns}
-                pageSize={5}
-                rowsPerPageOptions={[5]}
-                checkboxSelection
-            />
-        </div>
-    );
+    const URL = "http://localhost:8080/users/new-users"
+    const [user, setUser] = useState([])
+
+    async function fetchedData() {
+        const FETCHED_DATA = await fetch(URL);
+        const FETCHED_JSON = await FETCHED_DATA.json();
+        setUser(FETCHED_JSON.data)
+    }
+
+    const columns = [
+        { field: 'firstName', headerName: 'First name', width: 190 },
+        { field: 'lastName', headerName: 'Last name', width: 190 },
+        {
+            field: 'phoneNumber',
+            headerName: 'Phone Number',
+            type: 'number',
+            width: 130,
+        },
+        {
+            field: 'email',
+            headerName: 'E-mail',
+            width: 200,
+        },
+        { field: 'role', headerName: 'Role', width: 70 },
+        { field: 'disabled', headerName: 'Disabled', width: 90 },
+        { field: 'avatar', headerName: 'Avatar', width: 90 },
+        { field: 'actions', headerName: 'Actions', width: 90 },
+    ];
+
+    const rows = [
+        // { 
+        //     user && user.map((user, index) => {
+        //     return (
+        //         {
+        //             firstName: user.firstname,
+        //             lastName: user.lastname,
+        //             phoneNumber: user.number,
+        //             email: user.email,
+        //             role: "user",
+        //             disabled: "No",
+        //             avatar: "...",
+        //             actions: "..."
+        //         }
+        //     )
+        // })
+        // }
+    ];
+return (
+    <div style={{ height: 400, width: '100%' }}>
+        <DataGrid
+            rows={rows}
+            columns={columns}
+            pageSize={5}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+        />
+    </div>
+);
 }

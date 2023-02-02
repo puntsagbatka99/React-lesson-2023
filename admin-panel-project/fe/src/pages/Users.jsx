@@ -17,7 +17,7 @@ export default function Users() {
                 <Link style={{ textDecoration: "none" }} to={"/users/new-users"}><Button  style={{backgroundColor:"#746ab0"}} variant="contained">NEW</Button></Link>
                 <Button style={{backgroundColor:"#746ab0"}} variant="contained">ADD FILTER</Button>
             </Box>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', }}>
                 <CssBaseline />
                 <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
                     <Header />
