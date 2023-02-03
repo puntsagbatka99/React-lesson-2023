@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 
 export default function UsersTable() {
-    const URL = "http://localhost:8080/users/new-users"
+    const URL = "http://localhost:8080/users"
     const [user, setUser] = useState([])
 
     async function fetchedData() {

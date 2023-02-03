@@ -13,7 +13,7 @@ const PORT = 8080
 app.use(cors())
 app.use(express.json())
 
-app.get("/users/new-users", (request, response) => {
+app.get("/users", (request, response) => {
     fs.readFile("./data/users.json", "utf-8", (readError, readData) => {
         if (readError) {
             response.json({
@@ -29,7 +29,7 @@ app.get("/users/new-users", (request, response) => {
     })
 })
 
-app.post("/users/new-users", (request, response) => {
+app.post("/users", (request, response) => {
     console.log(request.body)
     const newUser = {
         id: Date.now().toString(),

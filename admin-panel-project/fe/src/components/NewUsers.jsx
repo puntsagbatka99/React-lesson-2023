@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 const drawerWidth = 240;
 
 export default function NewUsers() {
-    const URL = "http://localhost:8080/users/new-users"
+    const URL = "http://localhost:8080/users"
 
     async function createNewUser(data){
         const options = {
