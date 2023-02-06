@@ -2,7 +2,6 @@ import { Button, Card, CardContent, Grid, TextField } from "@mui/material";
 import { useState } from "react";
 
 export default function TimerForm({ title, project, id, onFormClose, onFormSubmit }) {
-    console.log(id)
     const [timer, setTimer] = useState({
         title: title || '', project: project || '',
     })

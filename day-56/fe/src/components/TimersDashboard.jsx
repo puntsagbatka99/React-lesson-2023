@@ -11,15 +11,49 @@ export default function TimersDashboard() {
     useEffect(() => {
         fetchTimersData()
     }, [])
+
+    useEffect(() => {
+        deleteTimer()
+    }, [])
+
+    useEffect(() => {
+        createTimer()
+    }, [])
+    // useEffect(() => {
+    //     setInterval(() => setTimers({ timers: projects }), 1000);
+    // }, []);
+
     async function fetchTimersData() {
         const FETCHED_DATA = await fetch(URL)
         const FETCHED_JSON = await FETCHED_DATA.json();
         console.log(FETCHED_JSON)
+        setTimers({ timers: FETCHED_JSON.data })
+    }
+
+    async function deleteTimer(userId) {
+        const options = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                userId: userId
+            })
+        }
+        const FETCHED_DATA = await fetch(URL, options);
+        const FETCHED_JSON = await FETCHED_DATA.json();
+        setTimers({ timers: FETCHED_JSON.data })
     }
 
 
     function handleCreateFormSubmit(timer) {
-        createTimer(timer);
+        
+        const newUser = {
+            title: timer.title,
+            project: timer.project
+        }
+        console.log(newUser)
+        createTimer(newUser)
     }
 
     function handleEditFormSubmit(attrs) {
@@ -38,9 +72,20 @@ export default function TimersDashboard() {
         stopTimer(timerId);
     }
 
-    function createTimer(timer) {
-        const t = newTimer(timer);
-        setTimers({ timers: timers.timers.concat(t) });
+    async function createTimer(data) {
+        // const t = newTimer(timer);
+        // setTimers({ timers: timers.timers.concat(t) });
+
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        }
+        const FETCHED_DATA = await fetch(URL, options);
+        const FETCHED_JSON = await FETCHED_DATA.json();
+        setTimers({ timers: FETCHED_JSON.data })
     }
 
     function startTimer(timerId) {
@@ -85,15 +130,11 @@ export default function TimersDashboard() {
         });
     }
 
-    function deleteTimer(timerId) {
-        setTimers({
-            timers: timers.timers.filter((t) => t.id !== timerId),
-        });
-    }
-
-    useEffect(() => {
-        setInterval(() => setTimers({ timers: projects }), 1000);
-    }, []);
+    // function deleteTimer(timerId) {
+    //     setTimers({
+    //         timers: timers.timers.filter((t) => t.id !== timerId),
+    //     });
+    // }
 
     return (
         <div>
