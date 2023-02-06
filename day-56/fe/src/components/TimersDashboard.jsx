@@ -59,8 +59,17 @@ export default function TimersDashboard() {
         setTimers({ timers: FETCHED_JSON.data })
     }
 
-    function handleEditFormSubmit(attrs) {
-        updateTimer(attrs);
+    async function handleEditFormSubmit(attrs) {
+        const options = {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(attrs)
+        }
+        const FETCHED_DATA = await fetch(URL, options);
+        const FETCHED_JSON = await FETCHED_DATA.json();
+        setTimers({ timers: FETCHED_JSON.data })
     }
 
     function handleTrashClick(timerId) {
@@ -105,17 +114,17 @@ export default function TimersDashboard() {
         });
     }
 
-    function updateTimer(attrs) {
-        setTimers({
-            timers: timers.timers.map((timer) => {
-                if (timer.id === attrs.id) {
-                    timer.title = attrs.title;
-                    timer.project = attrs.project;
-                }
-                return timer;
-            }),
-        });
-    }
+    // function updateTimer(attrs) {
+    //     setTimers({
+    //         timers: timers.timers.map((timer) => {
+    //             if (timer.id === attrs.id) {
+    //                 timer.title = attrs.title;
+    //                 timer.project = attrs.project;
+    //             }
+    //             return timer;
+    //         }),
+    //     });
+    // }
 
     return (
         <div>

@@ -17,7 +17,7 @@ app.get("/", (request, response) => {
 
 app.delete("/timers", (request, response) => {
     console.log(request.body)
-    
+
 
     fs.readFile("./data/data.json", "utf-8", (readError, readData) => {
         if (readError) {
@@ -29,7 +29,7 @@ app.delete("/timers", (request, response) => {
 
         const dataObject = JSON.parse(readData);
         const newData = dataObject.filter((d) => d.id !== request.body.userId);
-        
+
 
         fs.writeFile("./data/data.json", JSON.stringify(newData), (writeError) => {
             if (writeError) {
@@ -80,6 +80,30 @@ app.post("/timers", (request, response) => {
             })
         })
     })
+})
+
+app.put("/timers", (request, response) => {
+    fs.readFile("./data/data.json", "utf-8", (readError, readData) => {
+        if (readError) {
+            response.json({
+                status: " ERRRROOOORRRR",
+                data: []
+            })
+        }
+        const dataObject = JSON.parse(readData);
+        const newData = dataObject.map(d => {
+            if (d.id === request.body.id) {
+                d.title = request.body.title,
+                    d.project = request.body.project
+            }
+            return d;
+        })
+        response.json({
+            status: "success",
+            data: newData
+        })
+    })
+
 })
 
 app.get("/timers", (request, response) => {
