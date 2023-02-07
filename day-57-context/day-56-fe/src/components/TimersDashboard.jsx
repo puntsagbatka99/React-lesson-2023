@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { newTimer } from "./Helpers";
 import EditableTimerList from "./EditableTimerList";
 import ToggleableTimerForm from "./ToggleableTimerForm.jsx";
-import projects from "../data/data.js";
+import { useContext } from "react";
+import { TimerContext } from "../contexts/TimerContext";
 
 export default function TimersDashboard() {
-  const [timers, setTimers] = useState({ timers: [] });
+  const [timers, setTimers] = useContext(TimerContext)  
 
   const URL = "http://localhost:8080/timers";
 
@@ -13,9 +14,7 @@ export default function TimersDashboard() {
   //   fetchTimersData();
   // }, []);
 
-  useEffect(() => {
-    setInterval(() => setTimers({ timers: projects }), 1000);
-  }, []);
+
 
   async function fetchTimersData() {
     const FETCHED_DATA = await fetch(URL);
