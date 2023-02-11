@@ -9,9 +9,11 @@ console.log(a)
 
 let b = [2,3,4];
 let c = [4,5,6];
-function sum (){
+function sum (add,add1){
     let d = [];
     for(let i =0; i < 4; i++){
-        
+        d[i] = b[i] * c[i];
     }
+    return d;
 }
+console.log(sum(b,c))
