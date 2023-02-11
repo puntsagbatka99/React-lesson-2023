@@ -6,3 +6,12 @@ for(let i = 0; i < array.length; i++){
     }
 }
 console.log(a)
+
+let b = [2,3,4];
+let c = [4,5,6];
+function sum (){
+    let d = [];
+    for(let i =0; i < 4; i++){
+        
+    }
+}
