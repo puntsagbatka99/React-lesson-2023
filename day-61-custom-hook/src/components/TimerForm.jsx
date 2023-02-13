@@ -1,8 +1,12 @@
 import {Button, Card, CardContent, Grid, TextField} from "@mui/material";
+import { useContext } from "react";
 import {useState} from "react";
+import { TimerContext } from "../context/TimerContext";
 
-export default function TimerForm({title, project, id, onFormClose, onFormSubmit}) {
+export default function TimerForm({title, project, id, onFormClose}) {
     console.log(id)
+
+    const {handleCreateFormSubmit} = useContext(TimerContext);
     const [timer, setTimer] = useState({
         title: title || '', project: project || '',
     })
@@ -23,9 +27,9 @@ export default function TimerForm({title, project, id, onFormClose, onFormSubmit
 
 
     function handleSubmit() {
-        onFormSubmit({
-            id: id, title: timer.title, project: timer.project
-        })
+        // onFormSubmit({
+        //     id: id, title: timer.title, project: timer.project
+        // })
     }
 
     return (<Grid>

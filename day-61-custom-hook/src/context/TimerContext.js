@@ -11,6 +11,12 @@ const TimerContextProvider = ({ children }) => {
 
     const [timers, setTimers] = useState({ timers: [] });
 
+    function handleCreateFormSubmit(timer) {
+        createTimer(timer);
+    }
+    function handleEditFormSubmit(attrs) {
+        updateTimer(attrs);
+    }
 
     function createTimer(timer) {
         const t = newTimer(timer);
@@ -79,11 +85,11 @@ const TimerContextProvider = ({ children }) => {
 
 
     useEffect(() => {
-        setInterval(() => setTimers({ timers: timerData }), 1000);
+        setInterval(() => setTimers({ timers: timerData }), 10000);
     }, []);
 
     return (
-        <TimerContext.Provider value={{ timers, setTimers, handleStartClick, handleStopClick, handleTrashClick }}>
+        <TimerContext.Provider value={{ timers, setTimers, handleStartClick, handleStopClick, handleTrashClick, handleCreateFormSubmit, handleEditFormSubmit }}>
             {children}
         </TimerContext.Provider>
     )

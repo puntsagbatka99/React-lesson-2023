@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.footer-container{
+  width: 100vw;
+  height: 100px;
+  padding: 20px 100px;
+  background-color: green;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-container{
+  width: 100vw;
+  height: 70px;
+  background-color: aqua;
+  opacity: 0.4;
+  padding: 20px 100px;
+  color: rgb(219, 173, 113);
+  font-weight: 700;
+  display: flex;
+  justify-content: space-around;
+}
+
+.middle-container{
+  width: 100vw;
+  height: calc(100vh - 140px);
+  padding: 20px;
+  background-color:aquamarine;
+}
+
+.dark{
+  background-color: #282c34;
+  color: white;
+}
+.light{
+  background-color: antiquewhite;
+  color: #282c34;
+}
+.green{
+  background-color: rgb(84, 209, 95);
+  color: #282c34;
+}

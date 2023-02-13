@@ -2,7 +2,7 @@ import EditableTimer from "./EditableTimer.jsx";
 import { useContext } from "react";
 import { TimerContext } from "../context/TimerContext";
 
-export default function EditableTimerList({onFormSubmit}){
+export default function EditableTimerList(){
 
     const {timers, setTimers} = useContext(TimerContext);
 
@@ -14,7 +14,6 @@ export default function EditableTimerList({onFormSubmit}){
             project={timer.project}
             elapsed={timer.elapsed}
             runningSince={timer.runningSince}
-            onFormSubmit={onFormSubmit}
     />)
 
     return(

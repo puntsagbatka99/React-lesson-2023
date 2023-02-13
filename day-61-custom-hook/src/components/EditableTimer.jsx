@@ -1,19 +1,19 @@
 import {useState} from "react";
 import TimerForm from "./TimerForm.jsx";
 import Timer from "./Timer.jsx";
+import { useContext } from "react";
+import { TimerContext } from "../context/TimerContext.js";
 
 export default function EditableTimer({
-                                          onFormSubmit,
                                           id,
                                           title,
                                           project,
                                           elapsed,
                                           runningSince,
-                                          onTrashClick,
-                                          onStartClick,
-                                          onStopClick
                                       }) {
     const [editFormOpen, setEditFormOpen] = useState(false)
+
+    const {handleEditFormSubmit, handleCreateFormSubmit} = useContext(TimerContext)
 
     function handleFormClose() {
         closeForm()
@@ -24,7 +24,7 @@ export default function EditableTimer({
     }
 
     function handleSubmit(timer) {
-        onFormSubmit(timer)
+        handleCreateFormSubmit(timer)
         closeForm()
     }
 
@@ -46,9 +46,7 @@ export default function EditableTimer({
                                                                             project={project}
                                                                             elapsed={elapsed}
                                                                             runningSince={runningSince}
-                                                                            onTrashClick={onTrashClick}
-                                                                            onStartClick={onStartClick}
                                                                             onEditClick={handleEditClick}
-                                                                            onStopClick={onStopClick}/>}
+                                                                            />}
     </div>)
 }

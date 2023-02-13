@@ -17,7 +17,7 @@ export default function Timer({
   runningSince,
 }) {
   const elapsedString = renderElapsedString(elapsed, runningSince);
-  const { handleStartClick, handleStopClick, handleTrashClick } = useContext(TimerContext)
+  const { handleStartClick, handleStopClick, handleTrashClick} = useContext(TimerContext)
 
   function handleDelete() {
     handleTrashClick(id);
