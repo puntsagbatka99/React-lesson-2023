@@ -11,7 +11,7 @@ const PORT = 8080;
 app.use(cors())
 app.use(express.json())
 
-app.get("/register", (request, response) => {
+app.get("/users", (request, response) => {
     fs.readFile("./data/users.json", "utf-8", (readError, readData) => {
         if (readError) {
             response.json({
@@ -46,9 +46,7 @@ app.post("/register", (request, response)=> {
         }
 
         const dataObject = JSON.parse(readData)
-        console.log(dataObject)
         dataObject.push(newUser)
-        console.log(dataObject)
 
         fs.writeFile("./data/users.json", JSON.stringify(dataObject), (writeError) => {
             if (writeError) {
