@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import {Grid, Button} from "@mui/material"
 
 export default function Users() {
     const [users, setUsers] = useState([])
@@ -23,6 +24,7 @@ export default function Users() {
                         <th>LAst Name</th>
                         <th>Email</th>
                         <th>Address</th>
+                        <th>Role</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,6 +36,7 @@ export default function Users() {
                                     <td>{user.lastname}</td>
                                     <td>{user.email}</td>
                                     <td>{user.address}</td>
+                                    <td>{user.role.name}</td>
                                 </tr>
                             )
                         })

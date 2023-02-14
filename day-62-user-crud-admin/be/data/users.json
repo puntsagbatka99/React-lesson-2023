@@ -1,1 +1,37 @@
-[{"id":"1676339244454","firstname":"1","lastname":"1","email":"1","password":"1","address":"1"},{"id":"1676339263563","firstname":"2","lastname":"2","email":"2","password":"2","address":"2"},{"id":"1676340002736","firstname":"3","lastname":"3","email":"3","password":"3","address":"3"},{"id":"1676341514473","firstname":"4","lastname":"4","email":"4","password":"4","address":"4"}]
+[
+    {
+        "firstname": "rewt",
+        "lastname": "wert",
+        "email": "rewt",
+        "password": "wert",
+        "address": "wert",
+        "role": [
+            {
+                "id": 2,
+                "name": "User"
+            }
+        ]
+    },
+    {
+        "firstname": "fadsf",
+        "lastname": "asdf",
+        "email": "asdf",
+        "password": "asdf",
+        "address": "asdf",
+        "role": {
+            "id": 2,
+            "name": "User"
+        }
+    },
+    {
+        "firstname": "asdf",
+        "lastname": "asdf",
+        "email": "asdf",
+        "password": "asdf",
+        "address": "asdf",
+        "role": {
+            "id": 1,
+            "name": "Admin"
+        }
+    }
+]

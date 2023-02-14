@@ -27,16 +27,9 @@ app.get("/users", (request, response) => {
     })
 })
 
-app.post("/register", (request, response)=> {
+app.post("/register", (request, response) => {
     console.log(request.body)
-    const newUser = {
-        id: Date.now().toString(),
-        firstname: request.body.firstname,
-        lastname: request.body.lastname,
-        email: request.body.email,
-        password: request.body.password,
-        address: request.body.address
-    }
+    const body = request.body
     fs.readFile("./data/users.json", "utf-8", (readError, readData) => {
         if (readError) {
             response.json({
@@ -44,26 +37,52 @@ app.post("/register", (request, response)=> {
                 data: []
             })
         }
-
-        const dataObject = JSON.parse(readData)
-        dataObject.push(newUser)
-
-        fs.writeFile("./data/users.json", JSON.stringify(dataObject), (writeError) => {
-            if (writeError) {
+        const readDataObj = JSON.parse(readData)
+        fs.readFile("./data/userRole.json", "utf-8", (readError, readData) => {
+            if (readError) {
                 response.json({
-                    status: "ERROR during file write",
+                    status: "File read errorr",
                     data: []
                 })
             }
-            response.json({
-                status: "success",
-                data: dataObject
+
+            const roleData = JSON.parse(readData);
+            const roleName = roleData.filter(role => role.id === body.role)[0]
+            const userData = {
+                ...body,
+                role: roleName
+            }
+            readDataObj.push(userData)
+
+            fs.writeFile("./data/users.json", JSON.stringify(readDataObj), (writeError) => {
+                if (writeError) {
+                    response.json({
+                        status: "ERROR during file write",
+                        data: []
+                    })
+                }
+                response.json({
+                    status: "success",
+                    data: readDataObj
+                })
             })
         })
     })
-    response.json({
-        status: " success ",
-        data: []
+})
+
+app.get("/users/roles", (request, response) => {
+    fs.readFile("./data/userRole.json", "utf-8", (readError, readData) => {
+        if (readError) {
+            response.json({
+                status: "File does not exist",
+                data: []
+            })
+        }
+        const objectData = JSON.parse(readData)
+        response.json({
+            status: "Success",
+            data: objectData
+        })
     })
 })
 
