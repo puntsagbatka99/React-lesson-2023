@@ -29,9 +29,9 @@ export default function Users() {
                 </thead>
                 <tbody>
                     {
-                        users && users.map(user => {
+                        users && users.map((user,index) => {
                             return (
-                                <tr>
+                                <tr key={index}>
                                     <td>{user.firstname}</td>
                                     <td>{user.lastname}</td>
                                     <td>{user.email}</td>
