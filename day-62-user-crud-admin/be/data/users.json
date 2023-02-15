@@ -1,37 +1,24 @@
 [
     {
-        "firstname": "rewt",
-        "lastname": "wert",
-        "email": "rewt",
-        "password": "wert",
-        "address": "wert",
-        "role": [
-            {
-                "id": 2,
-                "name": "User"
-            }
-        ]
-    },
-    {
-        "firstname": "fadsf",
-        "lastname": "asdf",
-        "email": "asdf",
-        "password": "asdf",
-        "address": "asdf",
+        "firstname": "batka",
+        "lastname": "puntsag",
+        "email": "batka@gmail.com",
+        "password": "$2b$10$gwYZzu.o57/yQLWkt26AKeMNnTdQetWfsNHJjLrZBa10Z2hO1gZqS",
+        "address": "fdasfasdfasdf",
         "role": {
             "id": 2,
             "name": "User"
         }
     },
     {
-        "firstname": "asdf",
-        "lastname": "asdf",
-        "email": "asdf",
-        "password": "asdf",
-        "address": "asdf",
+        "firstname": "puntsag",
+        "lastname": "batka",
+        "email": "puntsagbatka@gmail.com",
+        "password": "$2b$10$QeWVpAaL8k3bEtayko1pR.QxxA5jo/M/2MQa/HX5zKCdgxmAY6NgC",
+        "address": "fdasfasdfasdf",
         "role": {
-            "id": 1,
-            "name": "Admin"
+            "id": 2,
+            "name": "User"
         }
     }
 ]
