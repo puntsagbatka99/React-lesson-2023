@@ -99,6 +99,25 @@ app.put("/category", (request, response) => {
         data: foundCategory
     })
 })
+
+app.get("/search", (request, response) => {
+    console.log(request.query)
+
+    const savedCategories = fs.readFileSync("./data/category.json", {
+        encoding: 'utf-8',
+        flag: 'r'
+    })
+
+    const savedCategoriesArrayObject = JSON.parse(savedCategories);
+    const foundCategory = savedCategoriesArrayObject.filter(category => 
+        category.name == request.query.value
+    );
+
+    response.json({
+        status:"success",
+        data: foundCategory
+    })
+})
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`)
 })
