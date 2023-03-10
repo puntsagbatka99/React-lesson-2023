@@ -2,10 +2,22 @@ import express from "express";
 // import { fireEmployee, getEmployees, getMaxNo, hireEmployee, updateEmployee } from "../services/employee-services.js";
 import { getPopularCategories } from "../services/category-services.js";
 import { getChildrenMenus, getParentMenus } from "../services/menus-services.js";
+import { search, getAllProducts } from "../services/product-services.js";
 const apiRouter = express.Router();
 
 apiRouter.get("/popular", async (request, response) => {
     const result = await getPopularCategories()
+    response.status(200).send(result)
+})
+
+apiRouter.get("/products", async (request, response) => {
+    const result = await getAllProducts()
+    response.status(200).send(result)
+})
+
+apiRouter.get("/search", async (request, response) => {
+    const keyword = request.query.keyword;
+    const result = await search(keyword);
     response.status(200).send(result)
 })
 
