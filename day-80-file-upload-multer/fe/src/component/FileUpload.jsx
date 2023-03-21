@@ -1,5 +1,8 @@
+import { useState } from "react";
+
 export default  function FileUpload(){
-    const URL = "http://localhost:8080/fileUpload"
+    const URL = "http://localhost:8081/fileUpload"
+    const [ imagesURL, setImagesURL ] = useState([])
     
     const handleFileUpload = async (event) =>{
         event.preventDefault();
@@ -16,12 +19,18 @@ export default  function FileUpload(){
         const FETCHED_DATA = await fetch(URL, options)
         const FETCHED_JSON = await FETCHED_DATA.json()
         console.log(FETCHED_JSON)
+        setImagesURL(FETCHED_JSON.data)
     }
 
     return(
-        <form method="post" encType="multipart/form-data" onSubmit={handleFileUpload}>
-            <input type="file" name="image" />
-            <button type="submit">Submit</button>
-        </form>
+        <div>
+            <form method="post" encType="multipart/form-data" onSubmit={handleFileUpload}>
+                <input type="file" name="image" />
+                <button type="submit">Submit</button>
+            </form>
+            {
+                imagesURL.map((img, index) => <img key={index} src={img} alt="img"/>)
+            }
+        </div>
     )
 }
