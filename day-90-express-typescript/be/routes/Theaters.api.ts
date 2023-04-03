@@ -7,6 +7,6 @@ theaterRouter.get("/list", getTheaters);
 
 theaterRouter.get("/byId/:id", getTheaterById)
 
-theaterRouter.get("/search?keyword", searchTheaters)
+theaterRouter.get("/search", searchTheaters)
 
 export default theaterRouter

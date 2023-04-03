@@ -21,12 +21,19 @@ export const getTheaterById = async (req: Request, res: Response) => {
 }
 
 export const searchTheaters = async ( req: Request, res: Response) => {
-    // const street1: string = req.query.keyword
+    const keyword: string = String(req.query.keyword)
 
-    // try {
-    //     const theaters = await TheaterModel.find()
-    //     res.status(200).json(theaters)
-    // } catch (error) {
-    //     res.status(404).json({ data: []})
-    // }
+    try {
+        const theaters = await TheaterModel.find({
+            $or: [
+                {"location.address.street1": keyword},
+                {"location.address.city": keyword},
+                {"location.address.state": keyword},
+                {"location.address.zipcode": keyword}
+            ]
+        })
+        res.status(200).json(theaters)
+    } catch (error) {
+        res.status(404).json({ data: []})
+    }
 }
