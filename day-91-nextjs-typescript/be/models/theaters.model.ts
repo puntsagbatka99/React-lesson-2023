@@ -7,7 +7,7 @@ interface IGeo {
         required: true
     },
     coordinates: {
-        type: [Number, Number],
+        type: [number, number],
         required: true
     }
 }
