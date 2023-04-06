@@ -7,6 +7,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import theaterRouter from "./routes/Theaters.api"
 import cors from "cors"
+import moviesRouter from "./routes/Movies.api"
 dotenv.config()
 
 const app: Express = express()
@@ -32,6 +33,7 @@ interface Student {
 app.use(cors())
 app.use(express.json())
 app.use("/theater", theaterRouter)
+app.use("/movies", moviesRouter)
 
 app.get('/', (req: Request, res: Response) => {
     res.send("<h1>DAY-90 Express TypeScript</h1>")

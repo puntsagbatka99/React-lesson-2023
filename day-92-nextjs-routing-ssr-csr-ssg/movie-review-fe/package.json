@@ -27,6 +27,11 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "@types/cors": "^2.8.13"
+    "@types/cors": "^2.8.13",
+    "autoprefixer": "^10.4.14",
+    "install": "^0.13.0",
+    "npm": "^9.6.4",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.1"
   }
 }

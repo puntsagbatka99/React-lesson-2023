@@ -47,7 +47,7 @@ interface ITomatoes{
     viewer: {
         rating: number,
         numReviews: number,
-        meter: number
+        meter: number 
     },
     lastUpdated: Date
 }

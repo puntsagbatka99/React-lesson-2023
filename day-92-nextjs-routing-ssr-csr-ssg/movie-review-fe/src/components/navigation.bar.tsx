@@ -7,9 +7,14 @@ export default function NavigationBar(): JSX.Element {
                     <img src="https://variety.com/wp-content/uploads/2019/02/rotten-tomatoes.jpg?w=1024" alt="tomato" style={{ height: "104px" }} />
                 </div>
                 <div style={{ display: 'flex', justifyContent: "center", alignItems: 'center' }}>
-                    <input type="text" placeholder="Search movies,TV,actors,more..." style={{ width: "385px", height: '35px', borderRadius: '26px', border: '1px solid white', backgroundColor: 'rgba(0,0,0,0.4)' }} />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems:'center', borderRadius: '26px', border: '1.5px solid white', backgroundColor: 'rgba(0,0,0,0.5)' }}>
+                        <svg style={{color: 'white', margin:'0 10px'}} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                        <input type="text" placeholder="Search movies,TV,actors,more..." style={{ width: "345px", height: '35px', borderRadius: '26px', border: '0', backgroundColor: 'rgba(0,0,0,0.005)' }} />
+                    </div>
                 </div>
-                <div style={{ width: "474px", height: "83px", display: 'flex', flexDirection: 'column', justifyContent: 'space-around', marginRight:"10px" }}>
+                <div style={{ width: "474px", height: "83px", display: 'flex', flexDirection: 'column', justifyContent: 'space-around', marginRight: "10px" }}>
                     <div style={{ display: "flex", justifyContent: "end" }}>
                         <a href="#" style={{ marginRight: "10px", color: 'white' }}>What's the Tomatometer?®</a>
                         <a href="#" style={{ color: 'white' }}>RT Critics</a>
@@ -29,7 +34,7 @@ export default function NavigationBar(): JSX.Element {
                     <a href="#" style={{ color: 'white' }}>The Super Mario Bros. Movie First Reviews</a>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-around', width: '145px' }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                         <path style={{ color: 'white' }} d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
                     </svg>
                     <svg style={{ color: 'white' }} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
