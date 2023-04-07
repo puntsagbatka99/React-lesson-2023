@@ -95,7 +95,7 @@ export default function Movies(): JSX.Element{
                 {
                     movies.map((movies, index) => 
                     <div  key={index} className="w-1/4 h-1/5">
-                        <img style={{width:"250px"}} src={movies.poster ? movies.poster : "https://m.media-amazon.com/images/M/MV5BMTc5NzAyOTQyNF5BMl5BanBnXkFtZTcwNzQ1MDc4OQ@@._V1_.jpg"} alt="movie-Poster" />
+                        <img style={{width:"250px", height:"350px"}} src={movies.poster ? movies.poster : "https://m.media-amazon.com/images/M/MV5BMTc5NzAyOTQyNF5BMl5BanBnXkFtZTcwNzQ1MDc4OQ@@._V1_.jpg"} alt="movie-Poster" />
                         <h3>{movies.tomatoes?.viewer?.meter ? movies.tomatoes?.viewer?.meter : 0}%</h3>
                         <h1 style={{width: "250px"}}>{movies.title}</h1>
                     </div>
