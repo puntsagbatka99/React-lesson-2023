@@ -42,7 +42,7 @@ interface ICountries {
     required: true
 }
 
-interface ITomatoes{
+interface ITomatoes {
     viewer: {
         rating: number,
         numReviews: number,
@@ -74,10 +74,10 @@ interface IMovies {
     tomatoes: ITomatoes
 }
 
-export default function Movies(): JSX.Element{
+export default function Movies(): JSX.Element {
     const URL = "http://localhost:8081/movies/list"
 
-    const [ movies, setMovies ] = useState<IMovies[]>([])
+    const [movies, setMovies] = useState<IMovies[]>([])
 
     async function fetchMovies(): Promise<void> {
         const fetchdata = await fetch(URL);
@@ -86,23 +86,26 @@ export default function Movies(): JSX.Element{
         setMovies(jsondata)
     }
 
-    useEffect(()=> {
+    useEffect(() => {
         fetchMovies()
-    },[])
+    }, [])
 
-    return(
+    return (
         <div className="w-full flex flex-wrap h-fit">
-                {
-                    movies.map((movies, index) => 
-                    <div  key={index} className="w-1/4 h-1/5">
-                        <img style={{width:"250px", height:"350px"}} src={movies.poster ? movies.poster : "https://m.media-amazon.com/images/M/MV5BMTc5NzAyOTQyNF5BMl5BanBnXkFtZTcwNzQ1MDc4OQ@@._V1_.jpg"} alt="movie-Poster" />
-                        <h3>{movies.tomatoes?.viewer?.meter ? movies.tomatoes?.viewer?.meter : 0}%</h3>
-                        <h1 style={{width: "250px"}}>{movies.title}</h1>
+            {
+                movies.map((movies, index) =>
+                    <div key={index} className="w-1/4 h-1/5">
+                        <img style={{ width: "250px", height: "350px" }} src={movies.poster ? movies.poster : "https://m.media-amazon.com/images/M/MV5BMTc5NzAyOTQyNF5BMl5BanBnXkFtZTcwNzQ1MDc4OQ@@._V1_.jpg"} alt="movie-Poster" />
+                        <div style={{ display: "flex", alignItems: 'center' }}>
+                            <img style={{ width: '20px' }} src={movies.tomatoes?.viewer?.meter > 60 ? "https://www.rottentomatoes.com/assets/pizza-pie/images/icons/tomatometer/tomatometer-fresh.149b5e8adc3.svg" : "https://www.rottentomatoes.com/assets/pizza-pie/images/icons/tomatometer/tomatometer-rotten.f1ef4f02ce3.svg"} alt="" />
+                            <h3>{movies.tomatoes?.viewer?.meter ? movies.tomatoes?.viewer?.meter : 0}%</h3>
+                        </div>
+                        <h1 style={{ width: "250px" }}>{movies.title}</h1>
                     </div>
-                    
-                    )
-                }
-                
+
+                )
+            }
+
         </div>
     )
 }
