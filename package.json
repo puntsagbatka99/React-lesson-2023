@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@nestjs/cli": "^9.4.0",
     "bootstrap": "^5.2.3"
   }
 }
